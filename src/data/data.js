@@ -1,4 +1,5 @@
 const data = [{
+  "image": "profile1.png",
   "id": "E1002",
   "firstName": "John",
   "lastName": "Smith",
@@ -9,9 +10,10 @@ const data = [{
   "skills": ["Sketch", "Figma", "Adobe XD"],
   "hoursLoggedThisWeek": 20,
   "onLeave": false
-},
-
-{
+ },
+ 
+ {
+  "image": "profile2.png",
   "id": "E1003",
   "firstName": "Lisa",
   "lastName": "White",
@@ -22,9 +24,10 @@ const data = [{
   "skills": ["SEO", "Content Marketing", "Google Analytics"],
   "hoursLoggedThisWeek": 35,
   "onLeave": false
-},
-
-{
+ },
+ 
+ {
+  "image": "profile3.png",
   "id": "E1004",
   "firstName": "Mark",
   "lastName": "Brown",
@@ -35,9 +38,10 @@ const data = [{
   "skills": ["Node.js", "MongoDB", "Express"],
   "hoursLoggedThisWeek": 40,
   "onLeave": true
-},
-
-{
+ },
+ 
+ {
+  "image": "profile4.png",
   "id": "E1005",
   "firstName": "Emily",
   "lastName": "Green",
@@ -48,9 +52,10 @@ const data = [{
   "skills": ["Recruitment", "Employee Relations", "Performance Management"],
   "hoursLoggedThisWeek": 40,
   "onLeave": false
-},
-
-{
+ },
+ 
+ {
+  "image": "profile5.png",
   "id": "E1006",
   "firstName": "Alex",
   "lastName": "Johnson",
@@ -62,5 +67,6 @@ const data = [{
   "hoursLoggedThisWeek": 40,
   "onLeave": false
   }]
-
-export default data;
+ 
+ export default data;
+ 
