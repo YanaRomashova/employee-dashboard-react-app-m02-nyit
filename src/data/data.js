@@ -9,7 +9,8 @@ const data = [{
   "employmentType": "Part-Time",
   "skills": ["Sketch", "Figma", "Adobe XD"],
   "hoursLoggedThisWeek": 20,
-  "onLeave": false
+  "onLeave": true, 
+
  },
  
  {

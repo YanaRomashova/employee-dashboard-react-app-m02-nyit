@@ -3,45 +3,53 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
 
-export default function MediaCard() {
- return (
-   <Card sx={{ maxWidth: 345, padding:2 }}>
-     <Box sx={{paddingTop: 2 }}> 
-     <CardMedia
-       sx={{ height: 300, width: 300, backgroundSize: "contain" ,margin: "auto" }}
-       image="/employee-dashboard-react-app-m02-nyit/profile1.png"
-       title="profile image"
-     />
-     </Box>
-     <EmojiNatureIcon/>
-     <CardContent>
-       <Typography gutterBottom variant="h5" component="div">
-         John Smith
-       </Typography>
-       <Typography variant="body2" color="text.secondary">
-        Department: UX/UI Design
-       </Typography>
-       <Typography>
-         Position: UI Design
-       </Typography>
-       <Stack direction="row" spacing={1} sx={{ marginTop: 2, justifyContent: "center" }}>
-     <Chip label="figma" />
-     <Chip label="Adobe XD" />
-     <Chip label="Sketch" />
-   </Stack>
-     </CardContent>
-     <Stack direction="row" spacing={1} sx={{ marginTop: 2, justifyContent: "center" }}>
-     <Chip label="Active" variant="outlined"/>
-     <Chip label="Hours: 20" variant="outlined" />
-   </Stack>
-   </Card>
- );
+export default function MediaCard({ data }) {
+  return (
+    <div style={{ textAlign: 'center' }}>
+      {data.map((item, index) => (
+        <div key={index} style={{ marginBottom: 20 }}>
+          <Card sx={{ maxWidth: 345, margin: 'auto' }}>
+            <CardMedia
+              sx={{
+                height: 300,
+                width: '100%',
+                backgroundSize: 'contain',
+              }}
+              image={`/employee-dashboard-react-app-m02-nyit/${item.image}`}
+              title="profile image"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {item.firstName} {item.lastName}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Department: {item.department}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Position: {item.position}
+              </Typography>
+              <Stack direction="row" spacing={1} justifyContent="center" marginTop={2}>
+                {item.skills.map((skill, skillIndex) => (
+                  <Chip key={skillIndex} label={skill} />
+                ))}
+              </Stack>
+            </CardContent>
+            <CardActions sx={{ justifyContent: 'center' }}>
+              <Stack direction="row" spacing={1} justifyContent="center">
+                <Chip label={item.onLeave ? 'Inactive' : 'Active'} variant="outlined" />
+                <Chip label={`Hours: ${item.hoursLoggedThisWeek}`} variant="outlined" />
+              </Stack>
+            </CardActions>
+          </Card>
+        </div>
+      ))}
+    </div>
+  );
 }
+
